@@ -5,12 +5,17 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.random.Random
 import kotlin.random.nextInt
+import android.text.method.ScrollingMovementMethod
+
+
+
 
 class MainActivity : AppCompatActivity() {
     private val arraySizes = mutableListOf<Int>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        printMassive.movementMethod = ScrollingMovementMethod()
         button.setOnClickListener {
             printMassive.text = printArray(massiv(massiveSize.text.toString().toInt()))
         }
